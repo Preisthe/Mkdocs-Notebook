@@ -20,7 +20,7 @@
 
 ### 例题：球壳中的电荷
 
-@import "img/lec5/shell.png"
+![img/lec5/shell.png](img/lec5/shell.png)
 
     如图所示，一个 -Q 的电荷放在距球壳中心 R/2 处，球壳上的感应电荷如何分布？电场如何分布？
 
@@ -31,7 +31,7 @@
 
 ### 镜像法 The Method of Images
 
-@import "img/lec5/plane.png"
+![img/lec5/plane.png](img/lec5/plane.png)
 
     一个点电荷放置于距无限大接地导电平面 d 处，如何计算导电平面上的电荷分布？
 
@@ -39,7 +39,7 @@
 
 *现在考虑另一个问题：*
 
-@import "img/lec5/image.png"
+![img/lec5/image.png](img/lec5/image.png)
 
 - 我们发现第二个问题产生了与第一个问题完全相同的电势分布（平面上方），事实上这确实确保了答案的唯一性，所以我们可以通过叠加两个点电荷的电势来计算第一题的电势分布。
 - 在得到电势分布后，自然就可以计算电场分布，然后再导电平面表面应用高斯定理，就可以得到电荷分布。

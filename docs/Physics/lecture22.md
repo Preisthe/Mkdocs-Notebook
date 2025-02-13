@@ -11,7 +11,9 @@
 ### De Broglie Wave
 
 任何物质都具有波粒二象性
-$$\lambda=\frac{h}{p}$$
+$$
+\lambda=\frac{h}{p}
+$$
 称为粒子的**德布罗意波**长。
 
 电子、中子这些粒子也是波，他们也会产生干涉条纹。
@@ -27,7 +29,9 @@ $$\lambda=\frac{h}{p}$$
 当一个事件可以以多种方式发生时，概率振幅就是所有可能方式的概率振幅之和，$\psi=\psi_1+\psi_2+\ldots$
 
 那么该事件发生的概率就等于
-$$P=|\psi|^2=|\psi_1|^2+|\psi_2|^2+2\Re(\psi_1^*\psi_2)+\ldots$$
+$$
+P=|\psi|^2=|\psi_1|^2+|\psi_2|^2+2\Re(\psi_1^*\psi_2)+\ldots
+$$
 
 离谱的是，当我们观察每一个电子，确定每次它通过哪一个缝之后，干涉条纹居然消失了。
 
@@ -37,14 +41,18 @@ $$P=|\psi|^2=|\psi_1|^2+|\psi_2|^2+2\Re(\psi_1^*\psi_2)+\ldots$$
 
 ### Heisenberg’s Uncertainty Principle
 
-$$\begin{align}
-    \Delta x\cdot\Delta p_x \geq \hbar\\
-    \Delta y\cdot\Delta p_y \geq \hbar\\
-    \Delta z\cdot\Delta p_z \geq \hbar\\
-\end{align}$$
+$$
+\begin{align}
+    \Delta x\cdot\Delta p_x \geq \hbar\\\\
+    \Delta y\cdot\Delta p_y \geq \hbar\\\\
+    \Delta z\cdot\Delta p_z \geq \hbar\\\\
+\end{align}
+$$
 其中 $\Delta x$，$\Delta p_x$ 可以看作是测量的标准差
 
 用波函数，我们这样表示一个粒子（一维）：
-$$\psi(x,t)=e^{i(kx-\omega t)}$$
+$$
+\psi(x,t)=e^{i(kx-\omega t)}
+$$
 - 假设我们测准了动量 $p_x=\hbar k$，但此时电子出现在任意位置的概率都相等，$\Delta x=\infty$
 - 假设我们测准了位置 $x$，那么电子的波函数就坍缩为 $\psi(x,t)=\delta(x-x_0)$，$\delta$ 函数的傅里叶变换告诉我们，这个函数是由无数不同的 k 的 $e^{i(kx-\omega t)}$ 积分得到的，因此 $\Delta p_x=\infty$

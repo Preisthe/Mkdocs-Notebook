@@ -21,9 +21,13 @@ $C$: 库仑，电荷单位
 
 电场是**向量场**， $\vec{E}(x, y, z)$  
 定义某点的电场强度为**试探电荷**在该点受到的力与电荷的比值
-$$\vec{E}=\vec{F}/q_0$$
+$$
+\vec{E}=\vec{F}/q_0
+$$
 则根据库仑定律，点电荷产生的电场为
-$$\vec{E}=\frac{kq}{r^2}\hat{r}$$
+$$
+\vec{E}=\frac{kq}{r^2}\hat{r}
+$$
 
 #### 电场线
 
@@ -33,19 +37,27 @@ $$\vec{E}=\frac{kq}{r^2}\hat{r}$$
 
 两个等量异号的点电荷组成的系统  
 用**电偶极矩**描述电偶极子的特性：
-$$\vec{p}=q\vec{d}$$
+$$
+\vec{p}=q\vec{d}
+$$
 其中 $\vec{d}$ 代表两个电荷之间的距离向量，从负电荷指向正电荷
 
 #### 电偶极子产生的电场
 
 电荷连线轴上（标量形式）：
-$$E=\frac{q}{4\pi\epsilon_0(z-\frac{1}{2}d)^2} - \frac{q}{4\pi\epsilon_0(z+\frac{1}{2}d)^2}$$
+$$
+E=\frac{q}{4\pi\epsilon_0(z-\frac{1}{2}d)^2} - \frac{q}{4\pi\epsilon_0(z+\frac{1}{2}d)^2}
+$$
 对于 $z\gg d$，可以近似为
-$$E=\frac{1}{2\pi\epsilon_0}\frac{p}{z^3}$$
+$$
+E=\frac{1}{2\pi\epsilon_0}\frac{p}{z^3}
+$$
 
 #### 电偶极子受到的力矩
 
 由于电荷等量异号，电偶极子受到的合力为 0，但力矩不为 0
-@import "img/lec1/electricDipole.png"
-$$\vec{\tau}=\vec{p}\times\vec{E}$$
+![img/lec1/electricDipole.png](img/lec1/electricDipole.png)
+$$
+\vec{\tau}=\vec{p}\times\vec{E}
+$$
 倾向于将电偶极子转到与电场方向一致

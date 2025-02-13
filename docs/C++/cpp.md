@@ -331,7 +331,7 @@ stl 中的所有容器都支持迭代器，但并不完全相同
 
 迭代器层次关系图：
 
-@import "img/it.png"
+![img/it.png](img/it.png)
 
 - `input` 只能读取值，`output` 在此基础上还能写入值
 - `bidirectional` 可以向前向后移动
@@ -341,4 +341,4 @@ stl 中的所有容器都支持迭代器，但并不完全相同
 
 stl 迭代器：
 
-@import "img/stl-it.png"
+![img/stl-it.png](img/stl-it.png)

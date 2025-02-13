@@ -2,7 +2,7 @@
 
 ## html结构
 
-@import "pics/sketch.png"
+![pics/sketch.png](pics/sketch.png)
 
 - html 元素就是标签包裹的全部内容
 - !doctype 声明不区分大小写
