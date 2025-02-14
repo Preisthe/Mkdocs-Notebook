@@ -1,21 +1,35 @@
-site_name: Preisthe's MkDocs Material Documentation
-site_url: https://sitename.example
+site_name: Preisthe's Notebook
+site_url: https://preisthe.github.io/Mkdocs-Notebook/
+repo_name: preisthe/Mkdocs-Notebook
+repo_url: https://github.com/preisthe/Mkdocs-Notebook
+copyright: Copyright &copy; 2024 Preisthe
+
 theme:
   name: material
+  logo: assets/logo.png
+  favicon: assets/favicon_1Js_icon.ico
   palette:
     # Dark Mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: light)"
+      scheme: slate
       toggle:
         icon: material/weather-sunny
         name: Dark
+      primary: blue grey
+      accent: cyan
 
     # Light Mode
-    - scheme: default
+    - media: "(prefers-color-scheme: dark)"
+      scheme: default
       toggle:
         icon: material/weather-night
         name: Light
-      primary: blue
-      accent: deep orange
+      primary: teal
+      accent: green
+  
+  features:
+    - navigation.footer
+    - navigation.tabs
 
 markdown_extensions:
   # code blocks
@@ -37,6 +51,22 @@ markdown_extensions:
   # format
   - pymdownx.tilde
 
+  # icon
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/preisthe
+      name: My Github Page
+
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
