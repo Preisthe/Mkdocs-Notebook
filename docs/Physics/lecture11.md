@@ -10,6 +10,7 @@ $$
 $$
  \oint \vec{E} \cdot d\vec{l} = - \frac{d\Phi}{dt} 
 $$
+
 $$
 \nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t} \quad (微分形式)
 $$
