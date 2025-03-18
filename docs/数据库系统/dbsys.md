@@ -112,10 +112,10 @@ SELECT <[DISTINCT] c1,c2,…> FROM <r1,…>
 ORDER BY <c1[DESC][,c2[DESC|ASC],…]>
 ```
 
-执行顺序：From → where → group (aggregate) → having → select → order by  
-**因此 where 后的条件先于 having 后的条件进行筛选**
-
-当出现嵌套时，在同一SQL语句内，除非外层查询的元组变量引入内层查询，否则内层查询只进行一次。
+- GROUP BY子句应该在HAVING子句之前
+- 执行顺序：From → where → group (aggregate) → having → select → order by  
+  **因此 where 后的条件先于 having 后的条件进行筛选**
+- 当出现嵌套时，在同一SQL语句内，除非外层查询的元组变量引入内层查询，否则内层查询只进行一次。
 
 #### Null
 
@@ -215,3 +215,119 @@ set salary = case
 
 - View 是虚表，对其进行的所有操作都转化为对基表的操作。
 - Most SQL implementations allow updates only on simple views defined on a single relation and without aggregates.
+
+### Transaction
+
+事务是一系列数据库操作序列，这些操作要么**全部完成**，要么**全部不完成**，是一个不可分割的工作单位。
+
+- commit
+- rollback
+
+### Join
+
+#### 语法
+
+- **自然连接**：R natural {inner join, left join, right join, full join} S
+- **非自然连接**：R {inner join, left join, right join, full join} S
+    on <连接条件判别式>
+    using (<同名的等值连接属性名>)
+
+#### tip
+
+- 由于不会引起歧义，`inner`、`outer` 可省略。
+- 但 `natural` 不能省略，不然就变成笛卡尔积了。
+- 非自然连接，容许不同名属性的比较；且结果关系中不消去重名属性
+- 使用 using 的连接类似于 natural 连接。但仅以 using 列出的公共属性为连接条件。
+
+## Intermidiate
+
+### Integrity Constraints
+
+对数据库中数据的某种限制，比如
+
+#### Single Relation
+
+- primary key
+- not null
+- unique
+
+**CHECK**语句可以限定某个属性必须满足某个条件，在 create table 时使用。
+
+```sql
+create domain hourly-wage numeric(5,2)
+    constraint value-test check(value > = 4.00);
+```
+
+给 constraint 命名可以用于 debug。
+
+#### Referential Integrity
+
+**foreign key**，需进行以下检查：
+
+- Insert 确保新插入的元组在参照关系中存在
+- Delete 要么 reject，要么 cascading delete
+
+**SQL 中的写法**：
+
+```sql
+foreign key (dept_name) references department -- 在最后指定
+dept_name  varchar (20) references department -- 在定义时指定
+```
+
+**foreign key** 默认引用主键，也可以指定引用其他属性，但必须是唯一的
+
+```sql
+foreign key (dept_name) references department (building)
+```
+
+**冲突处理方法**
+
+```sql
+create table course( 
+            . . .
+    foreign key(dept_name) references department
+            [on delete cascade]
+            [on update cascade]
+            . . . );
+```
+
+- NULL 是视作符合外键要求的值
+
+#### Assertions
+
+```sql
+CREATE ASSERTION <assertion-name>
+    CHECK <predicate>;
+```
+
+每当系统更新时都运行检查，开销很大
+
+#### Trigger
+
+**Example**
+
+```sql
+create trigger timeslot_check1 after insert [of <attr>] on section
+            referencing new row as nrow
+            for each row
+            when (nrow.time_slot_id not in (
+                        select time_slot_id
+                         from time_slot)) /* time_slot_id not present                
+                                                         in time_slot */
+             begin
+                rollback
+             end;
+```
+
+或者直接检查整个表：
+
+```sql
+referencing new table as ntable
+for each statement
+    ...
+```
+
+删除触发器：drop trigger <触发器名>;
+
+### Authorization
+

@@ -342,3 +342,9 @@ stl 中的所有容器都支持迭代器，但并不完全相同
 stl 迭代器：
 
 ![img/stl-it.png](img/stl-it.png)
+
+## 防止重复 include
+
+```cpp
+#programa once
+```
