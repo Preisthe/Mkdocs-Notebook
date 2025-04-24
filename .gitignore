@@ -130,3 +130,6 @@ dmypy.json
 
 # MacOS's shit
 **/.DS_Store
+
+Word Lists/
+*.pdf
