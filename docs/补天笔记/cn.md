@@ -74,3 +74,25 @@
 - TCP
     - 数据偏移：以 4B 为单位
     - 校验和：伪首部 + TCP 首部 + TCP 数据，伪首部 = 源 IP + 目的 IP + 0 + 6 + TCP 长度
+- 拥塞控制：ssthresh、慢开始、拥塞避免、快重传、快恢复
+    - 慢开始：cwnd = 1, 每经过一个 RTT，cwnd = 2cwnd
+    - 拥塞避免：cwnd = cwnd + 1
+    - 快重传：收到 3 个重复的 ACK，立即重传
+    - 快恢复：ssthresh = cwnd/2, cwnd = ssthresh, 进入拥塞避免
+- RTO 选择
+    - $$\begin{aligned}
+    RTT_{S1} &= RTT_1\\
+    RTT_S &= (1-\alpha)\times Old\ RTT_S + \alpha \times New\ RTT
+    \end{aligned}$$
+    - $$\begin{aligned}
+    RTT_{D1} &= RTT_1/2\\
+    RTT_D &= (1-\beta)\times Old\ RTT_D + \beta \times |New\ RTT-RTT_S|
+    \end{aligned}$$
+    - $RTO = RTT_S + 4RTT_D$
+
+## 应用层
+
+- DHCP
+- DNS：根、顶级、权限、本地
+- HTTP
+    - 1.0 采用非持续连接，1.1 采用持续连接
